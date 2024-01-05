@@ -1,0 +1,61 @@
+class Student:
+    def __init__(self):
+        self.rollno = 0
+        self.mark1 = 0
+        self.mark2 = 0
+        self.total_marks = 0
+
+    def read_data(self):
+        self.rollno = int(input("Enter Roll Number: "))
+        self.mark1 = float(input("Enter Mark 1: "))
+        self.mark2 = float(input("Enter Mark 2: "))
+
+    def compute_total(self):
+        self.total_marks = self.mark1 + self.mark2
+
+    def print_details(self):
+        print("Student Details:")
+        print(f"Roll Number: {self.rollno}")
+        print(f"Mark 1: {self.mark1}")
+        print(f"Mark 2: {self.mark2}")
+        print(f"Total Marks: {self.total_marks}")
+
+# Create 3 objects of the class
+student1 = Student()
+student2 = Student()
+student3 = Student()
+
+# Input details for each student
+print("Enter details for Student 1:")
+student1.read_data()
+
+print("\nEnter details for Student 2:")
+student2.read_data()
+
+print("\nEnter details for Student 3:")
+student3.read_data()
+
+# Compute total marks for each student
+student1.compute_total()
+student2.compute_total()
+student3.compute_total()
+
+# Print details for each student
+print("\nDetails for Student 1:")
+student1.print_details()
+
+print("\nDetails for Student 2:")
+student2.print_details()
+
+print("\nDetails for Student 3:")
+student3.print_details()
+
+# Find the topper
+topper = max(student1.total_marks, student2.total_marks, student3.total_marks)
+print("\nTopper of the class:")
+if topper == student1.total_marks:
+    print("Student 1")
+elif topper == student2.total_marks:
+    print("Student 2")
+else:
+    print("Student 3")
